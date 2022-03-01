@@ -1,0 +1,872 @@
+.mp_right
+    padding-right: 0
+
+.mp_left
+    padding-left: 0
+
+.container
+    width: 1170px
+    padding: 0
+
+header
+    padding: 0
+    .up
+        padding: 16px 0
+        background-color: $main_color
+        .container
+            display: flex
+            justify-content: space-between
+            align-items: center
+            font-weight: 400;
+            font-size: 16px;
+            color: #FFFFFF;
+        &_lang
+            display: inline-block
+            margin-right: 40px
+        &_login
+            display: inline-block
+            &_link
+                position: relative
+                font-weight: inherit
+                font-size: inherit
+                color: inherit
+                text-decoration: none
+                &:hover
+                    text-decoration: underline
+                    color: inherit
+                &::before
+                    content: ""
+                    display: block
+                    position: absolute
+                    top: 50%
+                    left: -20px
+                    transform: translateY(-50%)
+                    width: 2px
+                    height: 19px
+                    background-color: #fff
+    .fur
+        display: flex
+        justify-content: space-between
+        align-items: center
+        margin-top: 22px
+        &_logo
+            display: inherit
+            max-width: 147px
+            &_img
+                width: 100%
+        &_search
+            form
+                margin-left: -35px
+                display: inherit
+            &_input
+                width: 527px
+                padding: 15px 25px
+                border: 3px solid $main_color
+                border-radius: 10px 0 0 10px
+                color: #747474
+                outline: none
+                &::placeholder
+                    font-weight: 400
+                    font-size: 14px
+                    color: #747474
+            &_btn
+                padding: 15px
+                border-radius: 0 10px 10px 0
+                border: 3px solid $main_color
+                background-color: $main_color
+                img
+                    margin-bottom: 3px
+        &_categories
+            display: inherit
+        &_account
+            position: relative
+            display: inherit
+            &_img
+                margin-right: 21px
+            .four
+                display: flex
+                justify-content: center
+                align-items: center
+                position: absolute
+                top: -2px
+                left: 19px
+                width: 15px
+                height: 15px
+                background-color: $main_color
+                font-size: 10px
+                color: #fff
+                border-radius: 100%
+.promo
+    margin-top: 30px
+    &_wrapp
+        display: flex
+        justify-content: start
+        aside
+            width: 260px
+    &_aside
+        display: flex
+        align-items: center
+        padding: 25px 30px
+        background-color: $main_color
+        &_sandwich
+            display: inline-block
+            margin-right: 20px
+            .mb_sandwich
+                margin-bottom: 5px
+                display: block
+            &_1
+                width: 18px
+                height: 2px
+                background-color: #fff
+            &_2
+                width: 12px
+                height: 2px
+                background-color: #fff
+            &_3
+                width: 6px
+                height: 2px
+                background-color: #fff
+        &_title
+            display: inline-block
+            font-weight: 500
+            font-size: 16px
+            font-weight: bold
+            color: #FFFFFF
+            text-transform: uppercase
+        &_menu
+            width: 260px
+            list-style-type: none
+            list-style-position: inside
+            background-color: #F7F8FA
+            padding: 0
+            &_item              
+                width: 100%
+                border-bottom: 1px solid #E3E3E3
+                &:last-child
+                    border: none
+                &_link
+                    display: block
+                    padding: 11px 29px
+                    text-decoration: none
+                    font-weight: 400;
+                    font-size: 14px;
+                    line-height: 17px;
+                    letter-spacing: 0.02em;
+                    color: $primary_color;
+                    transition: 0.4s all
+                    &:hover
+                        background-color: $main_color
+                        font-size: 24px;
+                        font-weight: bold;
+                        color: #fff
+    &_menu
+        margin: 0
+        margin-left: 60px
+        padding: 25px 0 24px 0
+        list-style-type: none
+        &_item
+            display: inline-block
+            margin-right: 65px
+            &_link
+                font-weight: 400
+                font-size: 14px
+                color: $primary_color
+                text-decoration: none
+                text-transform: uppercase
+                transition: 0.3s all
+                &:hover
+                    color: $main_color                
+    &_baner
+        position: relative
+        width: 909px
+        height: 442px
+        background: url('../img/bg/baner_bg.png') center center/cover no-repeat
+        &_serve
+            position: absolute
+            top: 75px
+            left: 47px
+            width: 328px
+            height: 257px
+            &_title
+                font-weight: 400
+                font-size: 22px
+                line-height: 26px
+                letter-spacing: 0.05em
+                color: $main_color
+                text-transform: uppercase
+            &_header
+                position: relative
+                margin-top: 15px
+                margin-left: 12px
+                font-weight: bold
+                font-size: 40px
+                line-height: 47px
+                color: #2F2F2F
+                text-transform: capitalize
+                z-index: 1
+                &::after
+                    content: ""
+                    position: absolute
+                    top: 76px
+                    right: 4px
+                    width: 177px
+                    height: 29px
+                    background: url('../img/under_header.png')
+                    z-index: -1
+
+            &_subtitle
+                margin-top: 23px
+                font-weight: 600
+                font-size: 27px
+                line-height: 26px
+                color: rgba(81, 81, 81, 0.71)
+            &_btn
+                +btn_shop_now
+        &_img
+            position: absolute
+            top: 37px
+            left: 385px
+            max-width: 379px
+        &_discount
+            display: flex
+            justify-content: center
+            align-items: center
+            position: absolute
+            top: 13px
+            left: 119px
+            width: 50px
+            height: 50px
+            background-color: $main_color
+            font-weight: bold
+            font-size: 16px
+            letter-spacing: 0.02em
+            color: #FFFFFF
+            border-radius: 100%
+        &_list
+            display: flex
+            justify-content: space-between
+            flex-direction: column
+            position: absolute
+            top: 60px
+            right: 40px
+            width: 99px
+            height: 335px
+            &_item
+                width: inherit
+                height: 95px
+                text-align: center
+                background-color: #fff
+                &_img
+                    width: inherit
+                    margin-top: 5px
+                &_price
+                    font-weight: 500
+                    font-size: 12px
+                    color: $main_color
+                &_descr
+                    font-weight: bold
+                    font-size: 10px
+                    color: $primary_color
+                    text-transform: capitalize
+        &_slide
+            position: absolute
+            bottom: 20px
+            left: 50%
+            transform: translateX(-50%)
+            &_item
+                display: inline-block
+                width: 12px
+                height: 12px
+                margin-right: 15px
+                background: rgba(80, 190, 21, 0.29)
+                border-radius: 100%
+                cursor: pointer
+                &_active
+                    width: 30px
+                    height: 12px
+                    background-color: $main_color
+                    border-radius: 77px
+.feature
+    margin-top: 65px
+    &_wrapp
+        // width: 1169px
+        display: flex
+        justify-content: space-between
+        align-items: center
+    &_item
+        display: flex
+        justify-content: center
+        align-items: center
+
+        width: 224px
+        &_icon
+            margin-right: 15px
+        &_descr
+            &_title
+                font-weight: bold
+                font-size: 20px
+                line-height: 26px
+                color: $primary_color
+            &_text
+                font-weight: 400
+                font-size: 14px
+                line-height: 26px
+                color: rgba(81, 81, 81, 0.71)
+.offer
+    margin-top: 70px
+    &_wrapp
+        display: flex
+        justify-content: space-between
+        &_big
+            +offer_padding
+            width: 669px
+            height: 513px
+            background: url('../img/bg/offer_big_bg.png') center center/cover no-repeat
+        &_small
+            display: flex
+            justify-content: start
+            flex-direction: column
+        &_small_top
+            +offer_padding
+            width: 485px
+            height: 247px
+            background: url('../img/bg/offer_small_top_bg.png') center center/cover no-repeat
+        &_small_bottom
+            +offer_padding
+            margin-top: 17px
+            width: 485px
+            height: 247px
+            background: url('../img/bg/offer_small_bottom_bg.png') center center/cover no-repeat
+    &_title
+        font-weight: bold
+        font-size: 22px
+        line-height: 26px
+        color: $primary_color
+    &_subtitle
+        margin-top: 10px
+        font-weight: 600
+        font-size: 20px
+        line-height: 26px
+        color: $main_color
+    &_readme
+        position: relative
+        display: inline-block
+        margin-top: 13px
+        font-weight: 400
+        font-size: 16px
+        line-height: 26px
+        color: #757575
+        text-decoration: none
+        transition: .4s all
+        &:hover
+            color: $main_color
+        &::after
+            content: ""
+            display: block
+            position: absolute
+            top: 10px
+            left: 82px
+            width: 11px
+            height: 9px
+            background: url('../icons/readme.svg') center center/cover no-repeat
+.trending
+    margin-top: 120px
+    &_title
+        +h2_title
+    .row
+        margin-top: 73px
+    &_menu
+        margin-top: 45px
+        text-align: center
+        list-style-type: none
+        &_item
+            display: inline-block
+            max-width: 270px
+            margin-right: 70px
+            text-decoration: none
+            &_link
+                font-weight: 600
+                font-size: 24px
+                line-height: 30px
+                color: #C2C2C2
+                text-decoration: none
+                transition: .4s all
+                &:hover
+                    color: $main_color
+    &_item
+        margin-bottom: 45px
+        &_stuff
+            +stuff
+        &_name
+            +stuff_name
+        &_bottom
+            display: flex
+            justify-content: start
+            align-items: end
+            &_price
+                +stuff_price
+                margin-right: 100px
+                span
+                    +stuff_price_span
+    &_slider
+        display: flex
+        justify-content: space-between
+        width: 60px
+        margin: 0 auto
+    &_bg
+        position: relative
+        width: 269px
+        height: 288px
+        &_new::before
+            content: "New"
+            display: block
+            width: 45px
+            height: 20px
+            font-weight: 600;
+            font-size: 12px;
+            letter-spacing: 0.008em;
+            text-align: center
+            color: #FFFFFF;
+            background-color: $new_color
+            border-radius: 0 0 5px 0
+        &_sale::before
+            content: "Sale"
+            display: block
+            width: 45px
+            height: 20px
+            font-weight: 600;
+            font-size: 12px;
+            letter-spacing: 0.008em;
+            text-align: center
+            color: #FFFFFF;
+            background-color: $main_color
+            border-radius: 0 0 5px 0
+        &_1
+            background: url('../img/chairs/trending_1.png') center center/cover no-repeat
+        &_2
+            background: url('../img/chairs/trending_2.png') center center/cover no-repeat
+        &_3
+            background: url('../img/chairs/trending_3.png') center center/cover no-repeat
+        &_4
+            background: url('../img/chairs/trending_4.png') center center/cover no-repeat
+        &_5
+            background: url('../img/chairs/trending_5.png') center center/cover no-repeat
+        &_6
+            background: url('../img/chairs/trending_6.png') center center/cover no-repeat
+        &_7
+            background: url('../img/chairs/trending_7.png') center center/cover no-repeat
+        &_8
+            background: url('../img/chairs/trending_8.png') center center/cover no-repeat
+        &_flex
+            display: flex
+            justify-content: space-between
+            flex-direction: column
+            position: absolute
+            bottom: 15px
+            right: 7px
+            &_item
+                display: flex
+                justify-content: center
+                align-items: center
+                margin-top: 9px
+                width: 39px
+                height: 39px
+                background-color: #fff
+                border-radius: 100%
+                &:hover
+                    background-color: $main_color
+                    cursor: pointer
+.special_offer
+    margin-top: 100px
+    &_title
+        +h2_title
+    &_wrapp
+        display: flex
+        justify-content: space-between
+        margin-top: 60px
+        &_item
+            display: inline-block
+            width: 570px
+            height: 249px
+            &_block
+                width: 245px
+                margin: 28px 0 0 24px
+            &_title
+                font-weight: 600
+                font-size: 20px
+                color: $primary_color
+            &_text
+                margin-top: 10px
+                font-weight: 400
+                font-size: 12px
+                line-height: 18px
+                color: #757575
+            &_price
+                +stuff_price
+                span
+                    +stuff_price_span
+            &_flex
+                display: flex
+                justify-content: space-between
+                align-items: center
+                vertical-align: middle
+            &_btn
+                +btn_shop_now
+                margin-top: 17px
+        &_item.bg_r
+                background: url('../img/bg/spoffer_r.jpg') center center/cover no-repeat
+        &_item.bg_l
+                background: url('../img/bg/spoffer_l.jpg') center center/cover no-repeat
+    &_round
+        display: flex
+        justify-content: space-between
+        margin-top: 25px
+        &_item
+            display: flex
+            flex-direction: column
+            justify-content: center
+            padding-right: 4px
+            align-items: center
+            width: 50px
+            height: 50px
+            font-weight: 500
+            font-size: 14px
+            color: #FFFFFF
+            background-color: $main_color
+            border-radius: 100%
+            span
+                margin-left: 5px
+                font-weight: 400
+                font-size: 8px
+                letter-spacing: 0.005em
+                text-transform: uppercase
+                color: #FFFFFF
+.products
+    margin-top: 120px
+    &_title
+        +h2_title
+    .row
+        margin-top: 73px
+    &_menu
+        margin-top: 45px
+        text-align: center
+        list-style-type: none
+        &_item
+            display: inline-block
+            margin-right: 70px
+            text-decoration: none
+            &_link
+                font-weight: 600
+                font-size: 24px
+                line-height: 30px
+                color: #C2C2C2
+                text-decoration: none
+                transition: .4s all
+                &:hover
+                    color: $main_color
+    &_item
+        margin-bottom: 45px
+        &_stuff
+            +stuff
+        &_name
+            +stuff_name
+        &_bottom
+            display: flex
+            justify-content: start
+            align-items: end
+            &_price
+                +stuff_price
+                margin-right: 100px
+                span
+                    +stuff_price_span
+    &_slider
+        display: flex
+        justify-content: space-between
+        width: 60px
+        margin: 0 auto
+    &_bg
+        position: relative
+        width: 269px
+        height: 288px
+        &_new::before
+            content: "New"
+            +new_sale_discount
+            background-color: $new_color
+        &_sale::before
+            content: "Sale"
+            +new_sale_discount
+            background-color: $main_color
+        &_discount::before
+            content: "-30%"
+            +new_sale_discount
+            background-color: $discounts_color
+        &_1
+            background: url('../img/chairs/our_chair_1.jpg') center center/cover no-repeat
+        &_2
+            background: url('../img/sofas/our_sofa_2.jpg') center center/cover no-repeat
+        &_3
+            background: url('../img/sofas/our_sofa_3.jpg') center center/cover no-repeat
+        &_4
+            background: url('../img/tabbles/our_tabble_4.jpg') center center/cover no-repeat
+        &_5
+            background: url('../img/chairs/our_chair_5.jpg') center center/cover no-repeat
+        &_6
+            background: url('../img/benchs/our_bench_6.jpg') center center/cover no-repeat
+        &_7
+            background: url('../img/storages/our_storage_7.jpg') center center/cover no-repeat
+        &_8
+            background: url('../img/furniture/our_furniture_8.jpg') center center/cover no-repeat
+        &_flex
+            display: flex
+            justify-content: space-between
+            flex-direction: column
+            position: absolute
+            bottom: 15px
+            right: 7px
+            &_item
+                display: flex
+                justify-content: center
+                align-items: center
+                margin-top: 9px
+                width: 39px
+                height: 39px
+                background-color: #fff
+                border-radius: 100%
+                &:hover
+                    background-color: $main_color
+                    cursor: pointer
+    &_pages
+        display: flex
+        justify-content: end
+        align-items: center
+        margin-top: 50px
+        &_btn
+            position: relative
+            margin-right: 143px
+            padding: 12px 55px 12px 20px
+            font-weight: 400
+            font-size: 18px
+            color: #FFFFFF
+            background-color: $main_color
+            border: none
+            outline: none
+            border-radius: 3px
+            &::after
+                content: ""
+                position: absolute
+                right: 29px
+                top: 22px
+                display: inline-block
+                width: 14px
+                height: 12px
+                background: url('../icons/next.svg') center center/cover no-repeat
+
+        &_count
+            display: flex
+            justify-content: space-between
+            &_text
+                margin-right: 9px
+                font-weight: 400
+                font-size: 18px
+                letter-spacing: 0.008em
+                color: #757575
+            &_num
+                margin-right: 19px
+                padding: 0px 18px
+                border: 1px solid #ccc
+                font-weight: 400
+                font-size: 18px
+                letter-spacing: 0.008em
+                color: #757575
+                border-radius: 3px
+            &_of
+                margin-right: 23px
+                font-weight: 400
+                font-size: 18px
+                letter-spacing: 0.008em
+                color: #757575
+            &_next
+                display: flex
+                justify-content: end
+                align-items: center
+                background-color: $main_color
+                &_left
+                    display: flex
+                    justify-content: center
+                    align-items: center
+                    width: 29px
+                    height: 29px
+                    color: #fff
+                    font-weight: bold
+                &_right
+                    display: flex
+                    justify-content: center
+                    align-items: center
+                    width: 29px
+                    height: 29px
+                    color: #fff
+                    font-weight: bold
+.reviews
+    margin-top: 120px
+    text-align: center
+    &_title
+        +h2_title
+    &_foto
+        margin-top: 60px
+    &_text
+        position: relative
+        margin-top: 32px
+        font-weight: 400
+        font-size: 16px
+        line-height: 150%
+        letter-spacing: 0.005em
+        color: #515151
+        &_left
+            position: absolute
+            top: 40px
+            left: -154px
+        &_right
+            position: absolute
+            top: 40px
+            right: -145px
+    &_name
+        margin-top: 32px
+        font-style: normal
+        font-weight: 600
+        font-size: 24px
+        letter-spacing: 0.005em
+        color: $primary_color
+    &_profession
+        margin-top: 8px
+        font-weight: 400
+        font-size: 16px
+        letter-spacing: 0.005em
+        color: #515151
+.articles
+    margin-top: 160px
+    &_title
+        +h2_title
+    .row
+        margin-top: 55px
+    &_item
+        position: relative
+        min-height: 455.28px
+        margin-bottom: 22px
+        border-radius: 9px
+        &_bg_1
+            background: url('../img/bg/articles_1.png') center center/cover no-repeat
+        &_bg_2
+            background: url('../img/bg/articles_2.png') center center/cover no-repeat
+        &_bg_3
+            background: url('../img/bg/articles_3.png') center center/cover no-repeat
+        &_bg_4
+            background: url('../img/bg/articles_4.png') center center/cover no-repeat
+
+
+        &_wrapp
+            position: absolute
+            top: 250px
+            left: 46px
+            &_top
+                display: flex
+                justify-content: start
+                align-items: center
+                &_label
+                    position: relative
+                    margin-right: 20px
+                    padding: 5px 10px 5px 25px
+                    font-weight: 500
+                    font-size: 12px
+                    letter-spacing: 0.008em
+                    text-transform: uppercase
+                    color: $main_color
+                    background-color: #fff
+                    border-radius: 5px
+                    &::before
+                        content: ""
+                        position: absolute
+                        top: 50%
+                        transform: translateY(-50%)
+                        left: 7px
+                        width: 14px
+                        height: 14px
+                        background: url('../icons/label.png') center center/cover no-repeat
+                &_date
+                    font-weight: 400;
+                    font-size: 14px;
+                    letter-spacing: 0.008em;
+                    color: #FFFFFF;
+            &_title
+                margin-top: 20px
+                font-weight: 700
+                font-size: 39px
+                letter-spacing: 0.005em
+                color: #FFFFFF
+            &_readmore
+                font-weight: 500
+                font-size: 14px
+                letter-spacing: 0.008em
+                color: #FFFFFF
+                text-decoration: none
+                transition: .3s all
+                &:hover
+                    color: $main_color
+footer
+    margin-top: 100px
+    .footer_wrapp
+        display: flex
+        justify-content: space-between
+        &_item
+            &_text
+                margin-top: 15px
+                font-weight: 400
+                font-size: 16px
+                line-height: 32px
+                color: $primary_color
+            &_social
+                margin-left: 10px
+                margin-top: 15px
+                &_link
+                    margin-right: 20px
+            &_title
+                font-weight: 700
+                font-size: 18px
+                letter-spacing: 0.01em
+                color: $primary_color
+            &_menu
+                padding: 0
+                list-style-type: none
+                &_li
+                    margin: 17px 0 17px 0
+                    &_link
+                        font-weight: 400
+                        font-size: 18px
+                        letter-spacing: 0.01em
+                        color: $primary_color
+                        text-decoration: none
+                        &:hover
+                            color: $main_color
+    .footer_bottom
+        padding-top: 25px
+        margin-top: 65px
+        min-height: 80px
+        border-top: 1px solid #ccc
+        &_flex
+            display: flex
+            justify-content: space-between
+        &_privacy
+            &_menu
+                list-style-type: none
+                &_li
+                    display: inline-block
+                    margin-right: 50px
+                    &:last-child
+                        margin-right: 0
+                    &_link
+                        font-weight: 400
+                        font-size: 14px
+                        color: $primary_color
+                        text-decoration: none
+                        transition: .3s all
+                        &:hover
+                            color: $main_color
