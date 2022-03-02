@@ -243,14 +243,18 @@
                                 <div class="trending_item">
                                     <div class="trending_img 
                                         <?php
-                                            $field = get_field("trending_new_sale");
+                                            $field = get_field("new_sale");
                                             if($field === "new"){
                                                 ?>
-                                                    trending_bg_new
+                                                    new
+                                                <?php
+                                            }else if($field === "sale"){
+                                                ?>
+                                                    sale
                                                 <?php
                                             }else{
                                                 ?>
-                                                    trending_bg_sale
+                                                    discount
                                                 <?php
                                             }
                                         ?>
@@ -308,18 +312,19 @@
             <h2 class="special_offer_title">SPECIAL OFFER</h2>
             <div class="special_offer_wrapp">
 
-                <div class="special_offer_wrapp_item bg_r">
+                <div class="special_offer_wrapp_item"
+                    style="background: url('<?php the_field('special_img_1');?>')center center/cover no-repeat"
+                >
                     <div class="special_offer_wrapp_item_block">
                         <div class="special_offer_wrapp_item_title">
-                            Living Room Furniture
+                            <?php the_field("special_title_1");?>
                         </div>
                         <div class="special_offer_wrapp_item_text">
-                            You don't have a chair. Are you ready for growth? 
-                            Shop with us 40% discount!
+                            <?php the_field("special_descr_1");?>
                         </div>
                         <div class="special_offer_wrapp_item_flex">
                             <div class="special_offer_wrapp_item_price">
-                                $180 <span>$250</span>
+                                <?php the_field("special_price_1");?> <span><?php the_field("special_price_was_1");?></span>
                             </div>
                             <button class="special_offer_wrapp_item_btn">shop now</button>
                         </div>
@@ -343,17 +348,19 @@
                         </div>
                     </div>
                 </div>
-                <div class="special_offer_wrapp_item bg_l">
+                <div class="special_offer_wrapp_item"
+                    style="background: url('<?php the_field('special_img_2');?>')center center/cover no-repeat"
+                >
                     <div class="special_offer_wrapp_item_block">
                         <div class="special_offer_wrapp_item_title">
-                            Modern chair
+                            <?php the_field("special_title_2");?>
                         </div>
                         <div class="special_offer_wrapp_item_text">
-                            Hot chairs of the modern era are now available in our stock.
+                            <?php the_field("special_descr_2");?>
                         </div>
                         <div class="special_offer_wrapp_item_flex">
                             <div class="special_offer_wrapp_item_price">
-                                $75 <span>$150</span>
+                            <?php the_field("special_price_2");?> <span><?php the_field("special_price_was_2");?></span>
                             </div>
                             <button class="special_offer_wrapp_item_btn">shop now</button>
                         </div>
@@ -392,180 +399,79 @@
             </ul>
 
             <div class="row">
-                <div class="col-sm-6 col-md-5 offset-md-1 col-xl-3 col-lg-4 offset-lg-0">
-                    <div class="products_item">
-                        <div class="products_bg products_bg_1 products_bg_new">
-                            <div class="products_bg_flex">
-                                <div class="products_bg_flex_item">
-                                    <img src="<?php echo bloginfo('template_url');?>/assets/icons/like.png" alt="like">
+                <?php
+                    // параметры по умолчанию
+                    $my_posts = get_posts( array(
+                        'numberposts' => -1,
+                        'category_name'    => 'products',
+                        'orderby'     => 'date',
+                        'order'       => 'ASC',
+                        'post_type'   => 'post',
+                        'suppress_filters' => true, // подавление работы фильтров изменения SQL запроса
+                    ) );
+
+                    foreach( $my_posts as $post ){
+                        setup_postdata( $post );
+                        ?>
+                            <div class="col-sm-6 col-md-5 offset-md-1 col-xl-3 col-lg-4 offset-lg-0">
+                                <div class="trending_item">
+                                    <div class="trending_img 
+                                        <?php
+                                            $field = get_field("new_sale");
+                                            if($field === "new"){
+                                                ?>
+                                                    new
+                                                <?php
+                                            }else if($field === "sale"){
+                                                ?>
+                                                    sale
+                                                <?php
+                                            }else{
+                                                ?>
+                                                    discount
+                                                <?php
+                                            }
+                                        ?>
+                                    "
+                                    style="
+                                        background: url('<?php the_field("trending_img");?>') center center/cover no-repeat
+                                    "
+                                    >
+                                        <div class="stuff_bg_flex">
+                                            <div class="stuff_bg_flex_item">
+                                                <img src="<?php echo bloginfo('template_url');?>/assets/icons/like.png" alt="like">
+                                            </div>
+                                            <div class="stuff_bg_flex_item">
+                                                <img src="<?php echo bloginfo('template_url');?>/assets/icons/shopping.png" alt="like">
+                                            </div>
+                                            <div class="stuff_bg_flex_item">
+                                                <img src="<?php echo bloginfo('template_url');?>/assets/icons/arrows.png" alt="like">
+                                            </div>
+                                            <div class="stuff_bg_flex_item">
+                                                <img src="<?php echo bloginfo('template_url');?>/assets/icons/eye.png" alt="like">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="trending_item_stuff"><?php the_field("trending_stuff");?></div>
+                                    <div class="trending_item_name"><?php the_field("trending_name");?></div>
+                                    <div class="trending_item_bottom">
+                                        <div class="trending_item_bottom_price">
+                                            <?php the_field("trending_price");?> <span><?php the_field("trending_price_was");?></span>
+                                        </div>
+                                        <div class="trending_item_bottom_stars">
+                                            <img src="<?php echo bloginfo('template_url');?>/assets/icons/green_star.png" alt="star">
+                                            <img src="<?php echo bloginfo('template_url');?>/assets/icons/green_star.png" alt="star">
+                                            <img src="<?php echo bloginfo('template_url');?>/assets/icons/green_star.png" alt="star">
+                                            <img src="<?php echo bloginfo('template_url');?>/assets/icons/green_star.png" alt="star">
+                                            <img src="<?php echo bloginfo('template_url');?>/assets/icons/green_star.png" alt="star">
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="products_bg_flex_item">
-                                    <img src="<?php echo bloginfo('template_url');?>/assets/icons/shopping.png" alt="like">
-                                </div>
-                                <div class="products_bg_flex_item">
-                                    <img src="<?php echo bloginfo('template_url');?>/assets/icons/arrows.png" alt="like">
-                                </div>
-                                <div class="products_bg_flex_item">
-                                    <img src="<?php echo bloginfo('template_url');?>/assets/icons/eye.png" alt="like">
-                                </div>
                             </div>
-                        </div>
-                        <div class="products_item_stuff">Chair</div>
-                        <div class="products_item_name">Minimal LCD chair</div>
-                        <div class="products_item_bottom">
-                            <div class="products_item_bottom_price">
-                                $180 <span>$250</span>
-                            </div>
-                            <div class="products_item_bottom_stars">
-                                <img src="<?php echo bloginfo('template_url');?>/assets/icons/green_star.png" alt="star">
-                                <img src="<?php echo bloginfo('template_url');?>/assets/icons/green_star.png" alt="star">
-                                <img src="<?php echo bloginfo('template_url');?>/assets/icons/green_star.png" alt="star">
-                                <img src="<?php echo bloginfo('template_url');?>/assets/icons/green_star.png" alt="star">
-                                <img src="<?php echo bloginfo('template_url');?>/assets/icons/green_star.png" alt="star">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-6 col-md-5 offset-md-1 col-xl-3 col-lg-4 offset-lg-0">
-                    <div class="products_item">
-                        <div class="products_bg products_bg_2 products_bg_new"></div>
-                        <div class="products_item_stuff">Chair</div>
-                        <div class="products_item_name">Minimal iconic chair</div>
-                        <div class="products_item_bottom">
-                            <div class="products_item_bottom_price">
-                                $120 <span>$150</span>
-                            </div>
-                            <div class="products_item_bottom_stars">
-                                <img src="<?php echo bloginfo('template_url');?>/assets/icons/green_star.png" alt="star">
-                                <img src="<?php echo bloginfo('template_url');?>/assets/icons/green_star.png" alt="star">
-                                <img src="<?php echo bloginfo('template_url');?>/assets/icons/green_star.png" alt="star">
-                                <img src="<?php echo bloginfo('template_url');?>/assets/icons/green_star.png" alt="star">
-                                <img src="<?php echo bloginfo('template_url');?>/assets/icons/gray_star.png" alt="star">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-6 col-md-5 offset-md-1 col-xl-3 col-lg-4 offset-lg-0">
-                    <div class="products_item">
-                        <div class="products_bg products_bg_3 products_bg_discount"></div>
-                        <div class="products_item_stuff">Chair</div>
-                        <div class="products_item_name">Dining chairs</div>
-                        <div class="products_item_bottom">
-                            <div class="products_item_bottom_price">
-                                $100 <span>$120</span>
-                            </div>
-                            <div class="products_item_bottom_stars">
-                                <img src="<?php echo bloginfo('template_url');?>/assets/icons/green_star.png" alt="star">
-                                <img src="<?php echo bloginfo('template_url');?>/assets/icons/green_star.png" alt="star">
-                                <img src="<?php echo bloginfo('template_url');?>/assets/icons/green_star.png" alt="star">
-                                <img src="<?php echo bloginfo('template_url');?>/assets/icons/green_star.png" alt="star">
-                                <img src="<?php echo bloginfo('template_url');?>/assets/icons/gray_star.png" alt="star">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-6 col-md-5 offset-md-1 col-xl-3 col-lg-4 offset-lg-0">
-                    <div class="products_item">
-                        <div class="products_bg products_bg_4 products_bg_sale"></div>
-                        <div class="products_item_stuff">Chair</div>
-                        <div class="products_item_name">Buskbo armchair</div>
-                        <div class="products_item_bottom">
-                            <div class="products_item_bottom_price">
-                                $130 <span>$150</span>
-                            </div>
-                            <div class="products_item_bottom_stars">
-                                <img src="<?php echo bloginfo('template_url');?>/assets/icons/green_star.png" alt="star">
-                                <img src="<?php echo bloginfo('template_url');?>/assets/icons/green_star.png" alt="star">
-                                <img src="<?php echo bloginfo('template_url');?>/assets/icons/green_star.png" alt="star">
-                                <img src="<?php echo bloginfo('template_url');?>/assets/icons/green_star.png" alt="star">
-                                <img src="<?php echo bloginfo('template_url');?>/assets/icons/green_star.png" alt="star">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            
-                <div class="col-sm-6 col-md-5 offset-md-1 col-xl-3 col-lg-4 offset-lg-0">
-                    <div class="products_item">
-                        <div class="products_bg products_bg_5 products_bg_discount"></div>
-                        <div class="products_item_stuff">Chair</div>
-                        <div class="products_item_name">Modern chairs</div>
-                        <div class="products_item_bottom">
-                            <div class="products_item_bottom_price">
-                                $100 <span>$120</span>
-                            </div>
-                            <div class="products_item_bottom_stars">
-                                <img src="<?php echo bloginfo('template_url');?>/assets/icons/green_star.png" alt="star">
-                                <img src="<?php echo bloginfo('template_url');?>/assets/icons/green_star.png" alt="star">
-                                <img src="<?php echo bloginfo('template_url');?>/assets/icons/green_star.png" alt="star">
-                                <img src="<?php echo bloginfo('template_url');?>/assets/icons/green_star.png" alt="star">
-                                <img src="<?php echo bloginfo('template_url');?>/assets/icons/green_star.png" alt="star">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-6 col-md-5 offset-md-1 col-xl-3 col-lg-4 offset-lg-0">
-                    <div class="products_item">
-                        <div class="products_bg products_bg_6 products_bg_sale"></div>
-                        <div class="products_item_stuff">Chair</div>
-                        <div class="products_item_name">Plastic dining chair</div>
-                        <div class="products_item_bottom">
-                            <div class="products_item_bottom_price">
-                                $130 <span>$150</span>
-                            </div>
-                            <div class="products_item_bottom_stars">
-                                <img src="<?php echo bloginfo('template_url');?>/assets/icons/green_star.png" alt="star">
-                                <img src="<?php echo bloginfo('template_url');?>/assets/icons/green_star.png" alt="star">
-                                <img src="<?php echo bloginfo('template_url');?>/assets/icons/green_star.png" alt="star">
-                                <img src="<?php echo bloginfo('template_url');?>/assets/icons/green_star.png" alt="star">
-                                <img src="<?php echo bloginfo('template_url');?>/assets/icons/gray_star.png" alt="star">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-6 col-md-5 offset-md-1 col-xl-3 col-lg-4 offset-lg-0">
-                    <div class="products_item">
-                        <div class="products_bg products_bg_7 products_bg_new"></div>
-                        <div class="products_item_stuff">Chair</div>
-                        <div class="products_item_name">Minimal Wood chair</div>
-                        <div class="products_item_bottom">
-                            <div class="products_item_bottom_price">
-                                $180 <span>$250</span>
-                            </div>
-                            <div class="products_item_bottom_stars">
-                                <img src="<?php echo bloginfo('template_url');?>/assets/icons/green_star.png" alt="star">
-                                <img src="<?php echo bloginfo('template_url');?>/assets/icons/green_star.png" alt="star">
-                                <img src="<?php echo bloginfo('template_url');?>/assets/icons/green_star.png" alt="star">
-                                <img src="<?php echo bloginfo('template_url');?>/assets/icons/green_star.png" alt="star">
-                                <img src="<?php echo bloginfo('template_url');?>/assets/icons/green_star.png" alt="star">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-6 col-md-5 offset-md-1 col-xl-3 col-lg-4 offset-lg-0">
-                    <div class="products_item">
-                        <div class="products_bg products_bg_8 products_bg_new"></div>
-                        <div class="products_item_stuff">Chair</div>
-                        <div class="products_item_name">Elegent wood chair</div>
-                        <div class="products_item_bottom">
-                            <div class="products_item_bottom_price">
-                                $120 <span>$150</span>
-                            </div>
-                            <div class="products_item_bottom_stars">
-                                <img src="<?php echo bloginfo('template_url');?>/assets/icons/green_star.png" alt="star">
-                                <img src="<?php echo bloginfo('template_url');?>/assets/icons/green_star.png" alt="star">
-                                <img src="<?php echo bloginfo('template_url');?>/assets/icons/green_star.png" alt="star">
-                                <img src="<?php echo bloginfo('template_url');?>/assets/icons/green_star.png" alt="star">
-                                <img src="<?php echo bloginfo('template_url');?>/assets/icons/gray_star.png" alt="star">
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                        <?php
+                    }
+                    wp_reset_postdata(); // сброс
+                ?>
             </div>
 
             <div class="products_pages">

@@ -735,7 +735,7 @@ Theme name: Furniking
     min-height: 288px;
   }
   
-  .trending_bg_new::before {
+  .new::before {
     content: "New";
     display: block;
     width: 45px;
@@ -749,7 +749,7 @@ Theme name: Furniking
     border-radius: 0 0 5px 0;
   }
   
-  .trending_bg_sale::before {
+  .sale::before {
     content: "Sale";
     display: block;
     width: 45px;
@@ -761,6 +761,20 @@ Theme name: Furniking
     color: #FFFFFF;
     background-color: #7AC751;
     border-radius: 0 0 5px 0;
+  }
+
+  .discount::before {
+    content: "-30%";
+    display: block;
+    width: 45px;
+    height: 20px;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.008em;
+    text-align: center;
+    color: #FFFFFF;
+    border-radius: 0 0 5px 0;
+    background-color: #FF6868;
   }
   
   .stuff_bg_flex {
@@ -892,14 +906,6 @@ Theme name: Furniking
     outline: none;
     border-radius: 5px;
     margin-top: 17px;
-  }
-  
-  .special_offer_wrapp_item.bg_r {
-    background: url("assets/img/bg/spoffer_r.jpg") center center/cover no-repeat;
-  }
-  
-  .special_offer_wrapp_item.bg_l {
-    background: url("assets/img/bg/spoffer_l.jpg") center center/cover no-repeat;
   }
   
   .special_offer_round {
@@ -1050,84 +1056,10 @@ Theme name: Furniking
     margin: 0 auto;
   }
   
-  .products_bg {
+  .products_img {
     position: relative;
     width: 269px;
     height: 288px;
-  }
-  
-  .products_bg_new::before {
-    content: "New";
-    display: block;
-    width: 45px;
-    height: 20px;
-    font-weight: 600;
-    font-size: 12px;
-    letter-spacing: 0.008em;
-    text-align: center;
-    color: #FFFFFF;
-    border-radius: 0 0 5px 0;
-    background-color: #00B7F1;
-  }
-  
-  .products_bg_sale::before {
-    content: "Sale";
-    display: block;
-    width: 45px;
-    height: 20px;
-    font-weight: 600;
-    font-size: 12px;
-    letter-spacing: 0.008em;
-    text-align: center;
-    color: #FFFFFF;
-    border-radius: 0 0 5px 0;
-    background-color: #7AC751;
-  }
-  
-  .products_bg_discount::before {
-    content: "-30%";
-    display: block;
-    width: 45px;
-    height: 20px;
-    font-weight: 600;
-    font-size: 12px;
-    letter-spacing: 0.008em;
-    text-align: center;
-    color: #FFFFFF;
-    border-radius: 0 0 5px 0;
-    background-color: #FF6868;
-  }
-  
-  .products_bg_1 {
-    background: url("assets/img/chairs/our_chair_1.jpg") center center/cover no-repeat;
-  }
-  
-  .products_bg_2 {
-    background: url("assets/img/sofas/our_sofa_2.jpg") center center/cover no-repeat;
-  }
-  
-  .products_bg_3 {
-    background: url("assets/img/sofas/our_sofa_3.jpg") center center/cover no-repeat;
-  }
-  
-  .products_bg_4 {
-    background: url("assets/img/tabbles/our_tabble_4.jpg") center center/cover no-repeat;
-  }
-  
-  .products_bg_5 {
-    background: url("assets/img/chairs/our_chair_5.jpg") center center/cover no-repeat;
-  }
-  
-  .products_bg_6 {
-    background: url("assets/img/benchs/our_bench_6.jpg") center center/cover no-repeat;
-  }
-  
-  .products_bg_7 {
-    background: url("assets/img/storages/our_storage_7.jpg") center center/cover no-repeat;
-  }
-  
-  .products_bg_8 {
-    background: url("assets/img/furniture/our_furniture_8.jpg") center center/cover no-repeat;
   }
   
   .products_bg_flex {
