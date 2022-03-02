@@ -515,62 +515,43 @@
         <div class="container">
             <h2 class="articles_title">Our Latest Articles</h2>
             <div class="row">
-                <div class="col-md-6">
-                    <div class="articles_item articles_item_bg_1">
-                        <div class="articles_item_wrapp">
-                            <div class="articles_item_wrapp_top">
-                                <div class="articles_item_wrapp_top_label">Furniture</div>
-                                <div class="articles_item_wrapp_top_date">23 September 2022</div>
+                <?php
+                    // параметры по умолчанию
+                    $my_posts = get_posts( array(
+                        'numberposts' => -1,
+                        'category_name'    => 'articles',
+                        'orderby'     => 'date',
+                        'order'       => 'ASC',
+                        'post_type'   => 'post',
+                        'suppress_filters' => true, // подавление работы фильтров изменения SQL запроса
+                    ) );
+
+                    foreach( $my_posts as $post ){
+                        setup_postdata( $post );
+                        ?>
+                            <div class="col-md-6">
+                                <div class="articles_item"
+                                    style="
+                                        background: url('<?php the_field("articles_img");?>') center center/cover no-repeat;
+                                    "
+                                >
+                                    <div class="articles_item_wrapp">
+                                        <div class="articles_item_wrapp_top">
+                                            <div class="articles_item_wrapp_top_label"><?php the_field("articles_label");?></div>
+                                            <div class="articles_item_wrapp_top_date"><?php the_field("articles_date");?></div>
+                                        </div>
+                                        <h2 class="articles_item_wrapp_title">
+                                            <?php the_field("articles_title");?>
+                                        </h2>
+                                        <a href="#" class="articles_item_wrapp_readmore"><?php the_field("articles_readmore");?></a>
+                                    </div>
+                                </div>
                             </div>
-                            <h2 class="articles_item_wrapp_title">
-                                Begineer guide buying minimal sofa
-                            </h2>
-                            <a href="#" class="articles_item_wrapp_readmore">Read more</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="articles_item articles_item_bg_2">
-                        <div class="articles_item_wrapp">
-                            <div class="articles_item_wrapp_top">
-                                <div class="articles_item_wrapp_top_label">TABLE</div>
-                                <div class="articles_item_wrapp_top_date">23 September 2022</div>
-                            </div>
-                            <h2 class="articles_item_wrapp_title">
-                                Buying best minimal computer table
-                            </h2>
-                            <a href="#" class="articles_item_wrapp_readmore">Read more</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="articles_item articles_item_bg_3">
-                        <div class="articles_item_wrapp">
-                            <div class="articles_item_wrapp_top">
-                                <div class="articles_item_wrapp_top_label">Bench</div>
-                                <div class="articles_item_wrapp_top_date">23 march 2022</div>
-                            </div>
-                            <h2 class="articles_item_wrapp_title">
-                                How to choose best modern bench
-                            </h2>
-                            <a href="#" class="articles_item_wrapp_readmore">Read more</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="articles_item articles_item_bg_4">
-                        <div class="articles_item_wrapp">
-                            <div class="articles_item_wrapp_top">
-                                <div class="articles_item_wrapp_top_label">Chair</div>
-                                <div class="articles_item_wrapp_top_date">23 march 2022</div>
-                            </div>
-                            <h2 class="articles_item_wrapp_title">
-                                Best Summer Outfit <br> Style in this Country
-                            </h2>
-                            <a href="#" class="articles_item_wrapp_readmore">Read more</a>
-                        </div>
-                    </div>
-                </div>
+                        <?php
+                    }
+
+                    wp_reset_postdata(); // сброс
+                ?>
             </div>
         </div>
     </section>
