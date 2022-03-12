@@ -1,48 +1,5 @@
 <?php get_header();?>
 
-    <div class="feature">
-        <div class="container">
-            <div class="feature_wrapp">
-                <div class="feature_item">
-                    <div class="feature_item_icon">
-                        <img src=<?php the_field("feature_icon_1");?>>
-                    </div>
-                    <div class="feature_item_descr">
-                        <div class="feature_item_descr_title"><?php the_field("feature_title_1");?></div>
-                        <div class="feature_item_descr_text"><?php the_field("feature_descr_1");?></div>
-                    </div>
-                </div>
-                <div class="feature_item">
-                    <div class="feature_item_icon">
-                        <img src=<?php the_field("feature_icon_2");?>>
-                    </div>
-                    <div class="feature_item_descr">
-                        <div class="feature_item_descr_title"><?php the_field("feature_title_2");?></div>
-                        <div class="feature_item_descr_text"><?php the_field("feature_descr_2");?></div>
-                    </div>
-                </div>
-                <div class="feature_item">
-                    <div class="feature_item_icon">
-                        <img src=<?php the_field("feature_icon_3");?>>
-                    </div>
-                    <div class="feature_item_descr">
-                        <div class="feature_item_descr_title"><?php the_field("feature_title_3");?></div>
-                        <div class="feature_item_descr_text"><?php the_field("feature_descr_3");?></div>
-                    </div>
-                </div>
-                <div class="feature_item">
-                    <div class="feature_item_icon">
-                        <img src=<?php the_field("feature_icon_4");?>>
-                    </div>
-                    <div class="feature_item_descr">
-                        <div class="feature_item_descr_title"><?php the_field("feature_title_4");?></div></div>
-                        <div class="feature_item_descr_text"><?php the_field("feature_descr_4");?></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <div class="offer">
         <div class="container">
             <div class="offer_wrapp">
@@ -411,7 +368,6 @@
                             </div>
                         <?php
                     }
-
                     wp_reset_postdata(); // сброс
                 ?>
             </div>

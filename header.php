@@ -85,44 +85,44 @@
                         <nav>
                             <ul class="promo_menu">
                                 <li class="promo_menu_item"><a href="#" class="promo_menu_item_link">Home</a></li>
-                                <li class="promo_menu_item"><a href="#" class="promo_menu_item_link">Shop</a></li>
-                                <li class="promo_menu_item"><a href="#" class="promo_menu_item_link">Blog</a></li>
-                                <li class="promo_menu_item"><a href="#" class="promo_menu_item_link">About</a></li>
-                                <li class="promo_menu_item"><a href="#" class="promo_menu_item_link">Contacts us</a></li>
+                                <li class="promo_menu_item"><a href="#" class="promo_menu_item_link">Offer</a></li>
+                                <li class="promo_menu_item"><a href="#" class="promo_menu_item_link">Trending</a></li>
+                                <li class="promo_menu_item"><a href="#" class="promo_menu_item_link">Products</a></li>
+                                <li class="promo_menu_item"><a href="#" class="promo_menu_item_link">Articles</a></li>
                             </ul>
                         </nav>
                         <div class="promo_baner">
                             <div class="promo_baner_serve">
-                                <h2 class="promo_baner_serve_title"><?php the_field("banner_collection");?></h2>
-                                <h1 class="promo_baner_serve_header"><?php the_field("banner_title");?></h1>
-                                <h2 class="promo_baner_serve_subtitle"><?php the_field("banner_subtitle");?></h2>
+                                <h2 class="promo_baner_serve_title"><?php the_field("banner_collection", 8);?></h2>
+                                <h1 class="promo_baner_serve_header"><?php the_field("banner_title", 8);?></h1>
+                                <h2 class="promo_baner_serve_subtitle"><?php the_field("banner_subtitle", 8);?></h2>
                                 <button class="promo_baner_serve_btn">shop now</button>
                             </div>
                             <div class="promo_baner_img">
                                 <img src="<?php echo bloginfo('template_url');?>/assets/img/chairs/main_baner_chair.png" alt="baner_img">
-                                <div class="promo_baner_discount"><?php the_field("banner_discount");?></div>
+                                <div class="promo_baner_discount"><?php the_field("banner_discount", 8);?></div>
                             </div>
                             <div class="promo_baner_list">
                                 <div class="promo_baner_list_item">
                                     <div class="promo_baner_list_item_img">
-                                        <img src=<?php the_field("banner_img_1");?>>
+                                        <img src=<?php the_field("banner_img_1", 8);?>>
                                     </div>
-                                    <div class="promo_baner_list_item_price"><?php the_field("banner_price_1");?></div>
-                                    <div class="promo_baner_list_item_descr"><?php the_field("banner_descr_1");?></div>
+                                    <div class="promo_baner_list_item_price"><?php the_field("banner_price_1", 8);?></div>
+                                    <div class="promo_baner_list_item_descr"><?php the_field("banner_descr_1", 8);?></div>
                                 </div>
                                 <div class="promo_baner_list_item">
                                     <div class="promo_baner_list_item_img">
-                                        <img src=<?php the_field("banner_img_2");?>>
+                                        <img src=<?php the_field("banner_img_2", 8);?>>
                                     </div>
-                                    <div class="promo_baner_list_item_price"><?php the_field("banner_price_2");?></div>
-                                    <div class="promo_baner_list_item_descr"><?php the_field("banner_descr_2");?></div>
+                                    <div class="promo_baner_list_item_price"><?php the_field("banner_price_2", 8);?></div>
+                                    <div class="promo_baner_list_item_descr"><?php the_field("banner_descr_2", 8);?></div>
                                 </div>
                                 <div class="promo_baner_list_item">
                                     <div class="promo_baner_list_item_img">
-                                        <img src=<?php the_field("banner_img_3");?>>
+                                        <img src=<?php the_field("banner_img_3", 8);?>>
                                     </div>
-                                    <div class="promo_baner_list_item_price"><?php the_field("banner_price_3");?></div>
-                                    <div class="promo_baner_list_item_descr"><?php the_field("banner_descr_3");?></div>
+                                    <div class="promo_baner_list_item_price"><?php the_field("banner_price_3", 8);?></div>
+                                    <div class="promo_baner_list_item_descr"><?php the_field("banner_descr_3", 8);?></div>
                                 </div>
                             </div>
                             <div class="promo_baner_slide">
@@ -131,6 +131,49 @@
                                 <div class="promo_baner_slide_item promo_baner_slide_item_active"></div>
                                 <div class="promo_baner_slide_item"></div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="feature">
+            <div class="container">
+                <div class="feature_wrapp">
+                    <div class="feature_item">
+                        <div class="feature_item_icon">
+                            <img src=<?php the_field("feature_icon_1", 8);?>>
+                        </div>
+                        <div class="feature_item_descr">
+                            <div class="feature_item_descr_title"><?php the_field("feature_title_1", 8);?></div>
+                            <div class="feature_item_descr_text"><?php the_field("feature_descr_1", 8);?></div>
+                        </div>
+                    </div>
+                    <div class="feature_item">
+                        <div class="feature_item_icon">
+                            <img src=<?php the_field("feature_icon_2", 8);?>>
+                        </div>
+                        <div class="feature_item_descr">
+                            <div class="feature_item_descr_title"><?php the_field("feature_title_2", 8);?></div>
+                            <div class="feature_item_descr_text"><?php the_field("feature_descr_2", 8);?></div>
+                        </div>
+                    </div>
+                    <div class="feature_item">
+                        <div class="feature_item_icon">
+                            <img src=<?php the_field("feature_icon_3", 8);?>>
+                        </div>
+                        <div class="feature_item_descr">
+                            <div class="feature_item_descr_title"><?php the_field("feature_title_3", 8);?></div>
+                            <div class="feature_item_descr_text"><?php the_field("feature_descr_3", 8);?></div>
+                        </div>
+                    </div>
+                    <div class="feature_item">
+                        <div class="feature_item_icon">
+                            <img src=<?php the_field("feature_icon_4", 8);?>>
+                        </div>
+                        <div class="feature_item_descr">
+                            <div class="feature_item_descr_title"><?php the_field("feature_title_4", 8);?></div></div>
+                            <div class="feature_item_descr_text"><?php the_field("feature_descr_4", 8);?></div>
                         </div>
                     </div>
                 </div>
