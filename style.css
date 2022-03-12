@@ -244,16 +244,18 @@ header .fur_account .four{
 	color:#fff
 }
 .promo_menu{
+	display:inline-block;
 	margin:0;
 	margin-left:60px;
 	padding:25px 0 24px 0;
 	list-style-type:none
 }
-.promo_menu_item{
-	display:inline-block;
-	margin-right:65px
+.promo_menu li{
+	display: inline-block;
 }
 .promo_menu_item_link{
+	display:inline-block;
+	margin-right:40px;
 	font-weight:400;
 	font-size:14px;
 	color:#555;
@@ -1311,13 +1313,13 @@ header .fur_search_input{
 	left:25px
 }
 .promo_baner_img{
-	left:315px
+	left:330px
 }
 .promo_baner_list{
 	display:none
 }
-.promo_wrapp nav .promo_menu_item:last-child{
-    margin-right: 0;
+.promo_wrapp nav .promo_menu_item_link{
+    margin-right: 20px;
 }
 .offer_wrapp_big{
 	margin-right:15px
@@ -1357,6 +1359,9 @@ header .fur_search_btn{
 }
 .promo_wrapp nav .promo_menu_item{
 	margin-right:45px
+}
+.promo_wrapp nav .promo_menu_item_link{
+    margin-right: 15px;
 }
 .promo_wrapp aside{
 	display:none;

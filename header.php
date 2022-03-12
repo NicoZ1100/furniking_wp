@@ -83,13 +83,17 @@
                 
                     <div>
                         <nav>
-                            <ul class="promo_menu">
-                                <li class="promo_menu_item"><a href="#" class="promo_menu_item_link">Home</a></li>
-                                <li class="promo_menu_item"><a href="#" class="promo_menu_item_link">Offer</a></li>
-                                <li class="promo_menu_item"><a href="#" class="promo_menu_item_link">Trending</a></li>
-                                <li class="promo_menu_item"><a href="#" class="promo_menu_item_link">Products</a></li>
-                                <li class="promo_menu_item"><a href="#" class="promo_menu_item_link">Articles</a></li>
-                            </ul>
+                            <?php
+                                wp_nav_menu( [
+                                    'menu'            => 'Main',
+                                    'container'       => false,
+                                    'menu_class'      => 'promo_menu',
+                                    'echo'            => true,
+                                    'fallback_cb'     => 'wp_page_menu',
+                                    'items_wrap'      => '<ul class="promo_menu">%3$s</ul>',
+                                    'depth'           => 1,
+                                ] );
+                            ?>
                         </nav>
                         <div class="promo_baner">
                             <div class="promo_baner_serve">
